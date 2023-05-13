@@ -1,0 +1,40 @@
+Maps and Sets Exercise
+
+## **Quick Question #1**
+
+R- [1,2,3,4]
+
+## **Quick Question #2**
+
+R- ref
+
+## **Quick Question #3**
+
+R- 0: {array(3) => true} 
+   1: {array(3) => false}
+
+## **Quick Question #4**
+
+const hasDuplicate = arr => new Set(arr).size !== arr.length
+
+#######vowelCount
+
+function isVowel(char){
+    return 'aeiou'.includes(char);
+}
+
+function vowelCount(string){
+    const vowelMap = new Map();
+    for(let char of string){
+        let lowerCase = char.toLowerCase()
+        if(isVowel(lowerCase)){
+            if(vowelMap.has(lowerCase)){
+                vowelMap.set(lowerCase, vowelMap.get(lowerCase) + 1);
+            }
+            else{
+                vowelMap.set(lowerCase, 1);
+            }
+        }
+    }
+    return vowelMap
+}
